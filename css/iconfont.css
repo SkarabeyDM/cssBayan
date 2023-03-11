@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'icons';
+  src:
+    url('../fonts/icons.eot?v65vym');
+  src:
+    url('../fonts/icons.eot?v65vym#iefix') format('embedded-opentype'),
+    url('../fonts/icons.ttf?v65vym') format('truetype'),
+    url('../fonts/icons.woff?v65vym') format('woff'),
+    url('../fonts/icons.svg?v65vym#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"],
+.icon {
+  display: inline-block;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1em;
+  text-align: center;
+  color: inherit;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* .icon-skip_previous::before {
+  content: "\e900";
+}
+
+.icon-volume_down::before {
+  content: "\e901";
+}
+
+.icon-volume_off::before {
+  content: "\e902";
+}
+
+.icon-volume_up::before {
+  content: "\e903";
+}
+
+.icon-pause::before {
+  content: "\e904";
+}
+
+.icon-play_arrow::before {
+  content: "\e905";
+}
+
+.icon-skip_next::before {
+  content: "\e906";
+}
+
+.icon-add_circle::before {
+  content: "\e907";
+}
+
+.icon-arrow_back::before {
+  content: "\e908";
+}
+
+.icon-arrow_forward::before {
+  content: "\e909";
+}
+
+.icon-blur:has(:checked)::before {
+  content: "\e90a";
+}
+
+.icon-blur::before {
+  content: "\e90b";
+}
+
+.icon-more_horiz::before {
+  content: "\e90c";
+}
+
+.icon-note_add::before {
+  content: "\e90d";
+}
+
+.icon-settings::before {
+  content: "\e90e";
+}
+
+.icon-add::before {
+  content: "\e90f";
+} */
