@@ -1,0 +1,152 @@
+@import url(./iconfont.css);
+
+/*#region Variables */
+
+:root {
+  --meme-height: max(50vmin, 50vh)
+}
+
+/*#endregion */
+
+/*#region General & reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: inherit;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+body {
+  background-color: #333;
+  transition: .2s ease;
+
+  transition-property: width, max-width, height, max-height, transform, gap, display, border, color, opacity, filter;
+}
+
+html {
+  font-size: clamp(0px, 16px, 3vmin);
+}
+
+/*#endregion */
+
+.wrapper {
+  margin: auto;
+  width: fit-content;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+
+  width: 40rem;
+  max-width: 100vw;
+
+  background-color: white;
+  border: black solid 1vmin;
+}
+
+.accordion label {
+  display: flex;
+  flex-direction: column;
+  cursor: inherit;
+  padding: 1rem;
+  gap: 0;
+}
+
+.item {
+  cursor: pointer;
+  border-bottom: black solid .5vmin;
+}
+
+.item:last-child {
+  border: none;
+}
+
+.item h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  padding: .5em 1em;
+
+  min-height: 5vh;
+}
+
+.item-title {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: rgb(0, 136, 255);
+}
+
+.item:has(:checked) {
+  cursor: default;
+}
+
+.item:has(:checked) .item-title {
+  color: black;
+}
+
+.item:not(.item:has(:checked)):active .item-title {
+  color: rgb(0, 136, 255);
+}
+
+.item:has(:checked) label,
+.item:hover label {
+  gap: 1rem;
+}
+
+.item:has(:checked) h2,
+.item:hover h2 {
+  border-bottom: black solid .5vmin;
+}
+
+.item:has(:checked) .icon-arrow,
+.item:hover .icon-arrow {
+  transform: rotate(-90deg);
+}
+
+.item:has(:checked) .item-content,
+.item:hover .item-content {
+  max-height: var(--meme-height);
+}
+
+.item:active .meme {
+  filter: brightness(1.5);
+}
+
+.item-content {
+  overflow: hidden;
+  max-height: 0;
+}
+
+.accordion:hover .icon-arrow {
+  opacity: 1;
+}
+
+@media (hover:hover) {
+  .accordion:hover .item-title {
+    color: black;
+  }
+
+  .icon-arrow {
+    opacity: 0;
+  }
+}
+
+.icon-arrow{
+  font-size: 1.25em;
+}
+
+.meme {
+  object-fit: contain;
+  max-height: var(--meme-height);
+  height: 100%;
+  width: 100%;
+}
