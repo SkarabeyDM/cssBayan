@@ -24,11 +24,15 @@ body {
   background-color: #333;
   transition: .2s ease;
 
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+
+
   transition-property: width, max-width, height, max-height, transform, gap, display, border, color, opacity, filter;
 }
 
 html {
-  font-size: clamp(0px, 16px, 3vmin);
+  font-size: clamp(.5em, 1em, 3.5vmin);
 }
 
 /*#endregion */
@@ -66,14 +70,16 @@ html {
   border: none;
 }
 
-.item h2 {
+.item-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1em;
   padding: .5em 1em;
-
   min-height: 5vh;
+
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .item-title {
@@ -147,6 +153,7 @@ html {
 .meme {
   object-fit: contain;
   max-height: var(--meme-height);
+  border: black solid;
   height: 100%;
   width: 100%;
 }
