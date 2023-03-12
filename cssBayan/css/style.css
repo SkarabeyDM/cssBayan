@@ -99,7 +99,7 @@ html {
   color: black;
 }
 
-.item:not(.item:has(:checked)):active .item-title {
+.item:not(:has(:checked)):active .item-title {
   color: rgb(0, 136, 255);
 }
 
@@ -108,9 +108,9 @@ html {
   gap: 1rem;
 }
 
-.item:has(:checked) h2,
-.item:hover h2 {
-  border-bottom: black solid .5vmin;
+.item:has(:checked) .item-label,
+.item:hover .item-label {
+  border-bottom: black solid .3vmin;
 }
 
 .item:has(:checked) .icon-arrow,
@@ -132,21 +132,17 @@ html {
   max-height: 0;
 }
 
-.accordion:hover .icon-arrow {
-  opacity: 1;
-}
-
 @media (hover:hover) {
   .accordion:hover .item-title {
     color: black;
   }
 
-  .icon-arrow {
+  .accordion:not(:hover) .icon-arrow {
     opacity: 0;
   }
 }
 
-.icon-arrow{
+.icon-arrow {
   font-size: 1.25em;
 }
 
