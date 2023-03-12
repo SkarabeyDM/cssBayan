@@ -103,23 +103,19 @@ html {
   color: rgb(0, 136, 255);
 }
 
-.item:has(:checked) label,
-.item:hover label {
+:is(.item:has(:checked), .item:hover) label{
   gap: 1rem;
 }
 
-.item:has(:checked) .item-label,
-.item:hover .item-label {
+:is(.item:has(:checked), .item:hover) .item-label{
   border-bottom: black solid .3vmin;
 }
 
-.item:has(:checked) .icon-arrow,
-.item:hover .icon-arrow {
+:is(.item:has(:checked), .item:hover) .icon-arrow{
   transform: rotate(-90deg);
 }
 
-.item:has(:checked) .item-content,
-.item:hover .item-content {
+:is(.item:has(:checked), .item:hover) .item-content, .meme{
   max-height: var(--meme-height);
 }
 
@@ -149,7 +145,6 @@ html {
 
 .meme {
   object-fit: contain;
-  max-height: var(--meme-height);
   border: black solid;
   height: 100%;
   width: 100%;
