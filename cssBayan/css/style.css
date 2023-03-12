@@ -143,6 +143,7 @@ html {
 }
 
 .icon-arrow {
+  user-select: none;
   font-size: 1.25em;
 }
 
