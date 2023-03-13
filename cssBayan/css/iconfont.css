@@ -30,7 +30,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* .icon-skip_previous::before {
+.icon-skip_previous::before {
   content: "\e900";
 }
 
@@ -92,4 +92,4 @@
 
 .icon-add::before {
   content: "\e90f";
-} */
+}

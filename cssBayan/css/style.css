@@ -24,11 +24,15 @@ body {
   background-color: #333;
   transition: .2s ease;
 
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+
+
   transition-property: width, max-width, height, max-height, transform, gap, display, border, color, opacity, filter;
 }
 
 html {
-  font-size: clamp(0px, 16px, 3vmin);
+  font-size: clamp(.5em, 1em, 3.5vmin);
 }
 
 /*#endregion */
@@ -66,14 +70,16 @@ html {
   border: none;
 }
 
-.item h2 {
+.item-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1em;
   padding: .5em 1em;
-
   min-height: 5vh;
+
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .item-title {
@@ -93,27 +99,23 @@ html {
   color: black;
 }
 
-.item:not(.item:has(:checked)):active .item-title {
+.item:not(:has(:checked)):active .item-title {
   color: rgb(0, 136, 255);
 }
 
-.item:has(:checked) label,
-.item:hover label {
+.item:has(:checked) label{
   gap: 1rem;
 }
 
-.item:has(:checked) h2,
-.item:hover h2 {
-  border-bottom: black solid .5vmin;
+.item:has(:checked) .item-label{
+  border-bottom: black solid .3vmin;
 }
 
-.item:has(:checked) .icon-arrow,
-.item:hover .icon-arrow {
+.item:has(:checked) .icon-arrow{
   transform: rotate(-90deg);
 }
 
-.item:has(:checked) .item-content,
-.item:hover .item-content {
+.item:has(:checked) .item-content, .meme{
   max-height: var(--meme-height);
 }
 
@@ -126,27 +128,44 @@ html {
   max-height: 0;
 }
 
-.accordion:hover .icon-arrow {
-  opacity: 1;
-}
-
-@media (hover:hover) {
+@media (hover) {
   .accordion:hover .item-title {
     color: black;
   }
 
-  .icon-arrow {
+  .accordion:not(:hover) .icon-arrow {
     opacity: 0;
+  }
+
+  .item:hover .item-content{
+    max-height: var(--meme-height);
+  }
+
+  .item:hover .icon-arrow{
+    transform: rotate(-90deg);
+  }
+
+  .item:hover .item-label{
+    border-bottom: black solid .3vmin;
+  }
+
+  .item:hover label{
+    gap: 1rem;
   }
 }
 
-.icon-arrow{
+.icon-arrow {
+  user-select: none;
   font-size: 1.25em;
 }
 
 .meme {
   object-fit: contain;
-  max-height: var(--meme-height);
+  border: black solid;
   height: 100%;
   width: 100%;
+}
+
+.bliz{
+  transition-duration: 20s;
 }
