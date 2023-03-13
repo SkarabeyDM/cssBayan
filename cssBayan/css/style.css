@@ -165,3 +165,7 @@ html {
   height: 100%;
   width: 100%;
 }
+
+.bliz{
+  transition-duration: 20s;
+}
