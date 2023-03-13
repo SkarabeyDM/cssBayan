@@ -103,19 +103,19 @@ html {
   color: rgb(0, 136, 255);
 }
 
-:is(.item:has(:checked), .item:hover) label{
+.item:has(:checked) label{
   gap: 1rem;
 }
 
-:is(.item:has(:checked), .item:hover) .item-label{
+.item:has(:checked) .item-label{
   border-bottom: black solid .3vmin;
 }
 
-:is(.item:has(:checked), .item:hover) .icon-arrow{
+.item:has(:checked) .icon-arrow{
   transform: rotate(-90deg);
 }
 
-:is(.item:has(:checked), .item:hover) .item-content, .meme{
+.item:has(:checked) .item-content, .meme{
   max-height: var(--meme-height);
 }
 
@@ -128,13 +128,29 @@ html {
   max-height: 0;
 }
 
-@media (hover:hover) {
+@media (hover) {
   .accordion:hover .item-title {
     color: black;
   }
 
   .accordion:not(:hover) .icon-arrow {
     opacity: 0;
+  }
+
+  .item:hover .item-content{
+    max-height: var(--meme-height);
+  }
+
+  .item:hover .icon-arrow{
+    transform: rotate(-90deg);
+  }
+
+  .item:hover .item-label{
+    border-bottom: black solid .3vmin;
+  }
+
+  .item:hover label{
+    gap: 1rem;
   }
 }
 
